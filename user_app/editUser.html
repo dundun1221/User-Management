@@ -1,0 +1,43 @@
+<div ng-controller="editCtrl">
+
+    <form role="form">
+
+        <fieldset>
+            <legend>Name</legend>
+
+            <div class="form-group">
+                <label for="first name">First Name:</label>
+                <input type="text" class="form-control" id="first name" ng-model="user.fName">
+                <label for="last name">Last Name:</label>
+                <input type="text" class="form-control" id="last name" ng-model="user.lName"/>
+            </div>
+        </fieldset>
+
+
+        <fieldset>
+            <legend>Personal Info</legend>
+            <div class="form-group">
+                <label for="age">Age: </label>
+                <input type="text" class="form-control" id="age" ng-model="user.age"/>
+            </div>
+            Gender:
+            <label class="radio-inline"><input type="radio" name="Male" value="M" ng-model="user.gender">Male</label>
+            <label class="radio-inline"><input type="radio" name="Female" value="F" ng-model="user.gender">Female</label>
+        </fieldset>
+
+
+        <fieldset>
+            <legend>Contact Info</legend>
+            <div class="form-group">
+                <label for="number">Tel:</label>
+                <input type="text" class="form-control" id="number" ng-model="user.number"/>
+            </div>
+            <div class="form-group">
+                <label for="eMail">Email:</label>
+                <input type="email" class="form-control" id="eMail" ng-model="user.eMail" />
+            </div>
+        </fieldset>
+        <button type="button" class="btn btn-info" ng-click="goToList()">Submit</button>
+    </form>
+
+</div>
