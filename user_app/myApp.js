@@ -3,6 +3,7 @@
  */
 var app = angular.module("myApp", ['ngRoute']);
 
+//provide hardcoded data 
 app.factory('userFactory',function(){
     var Users = [
         {id:1, fName:'Hege',  lName:"Pege" ,  gender:"F", age:'18', number:'315-438-6789', eMail:'hpage@usermanagement.com'},
@@ -46,7 +47,7 @@ app.factory('userFactory',function(){
 
 
 
-
+//rounting
 app.config(function($routeProvider) {
     $routeProvider
         .when("/", {
@@ -63,7 +64,7 @@ app.config(function($routeProvider) {
         })
 
 });
-
+//controller for table
 app.controller('tableCtrl',function($scope, userFactory , $location){
 
     $scope.users = userFactory.getUser();
@@ -76,6 +77,7 @@ app.controller('tableCtrl',function($scope, userFactory , $location){
     };
 
 });
+//controller for creating new user
 app.controller('newCtrl',function($scope,userFactory,$location){
     $scope.users =userFactory.getUser();
     $scope.newUser = function(user){
@@ -83,6 +85,8 @@ app.controller('newCtrl',function($scope,userFactory,$location){
         $location.path('/');
     };
 });
+
+//controller for editting user
 app.controller('editCtrl',function($scope, userFactory, $routeParams, $location){
     $scope.uid = $routeParams.id;
     $scope.users = userFactory.getUser();
